@@ -27,11 +27,11 @@
       {
         "id":"1",
         "title":"Développement Back : Java",
-        "content":"Nombreux projets sous java 6 et 8"
+        "content":"Nombreux projets sous Java 6 et 8"
       },
       {
         "id":"2",
-        "title":"Développement front : Javascript",
+        "title":"Développement Front : Javascript",
         "content":"Node JS, Vanilla JS, Backbone.JS, React.JS, jQuery, Bootstrap, ..."
       },
       {

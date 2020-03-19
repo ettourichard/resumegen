@@ -12,11 +12,11 @@ class Categorie extends React.Component{
 				<h2>{this.props.resume.title}</h2>
 				{this.props.resume.lignes.map(
 							ligne =>(
-							      <Ligne ligne={ligne} />
+							      <Ligne ligne={ligne} key={ligne.id} />
 				      		)
 				      	)
 				 	}
-			 <small class="d-block text-right mt-3 d-print-none">
+			 <small className="d-block text-right mt-3 d-print-none">
 		        <a href="#">Voir détails</a>
 		      </small>
 			</article>);

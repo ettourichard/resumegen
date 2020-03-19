@@ -11,10 +11,10 @@ class App extends React.Component {
 
   render(){
     return (
-      <div class="container">
+      <div className="container">
 
         {this.state.map(categorie => (
-          <Categorie resume={categorie} />
+          <Categorie resume={categorie} key={categorie.id}/>
           ))
         }
       
@@ -22,7 +22,7 @@ class App extends React.Component {
           <form className="d-print-none">
             <h4>Ajouter un élément</h4>
             <input type="text" />
-            <button type="submit" onClick="handleAddCategorie(e)">Valider</button>
+            <button type="submit" onClick={this.handleAddCategorie}>Valider</button>
           </form>
         </div>
       </div>
