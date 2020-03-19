@@ -1,92 +1,40 @@
 import React from 'react';
 import Categorie from "./components/Categorie"
 import './App.css';
-
+import resume_file from "./data/exemple.json"
 
 class App extends React.Component {
 
-  resume = [
-    {
-      "id":"1",
-      "title":"Experience Professionnelle",
-      "lignes":[
-        {
-          "id":"7",
-          "title":"Société Générale",
-          "content":"Mission de 3 ans a la société générale BDDF : crédit consommation web"
-        },
-        {
-          "id":"8",
-          "title":"Société Générale",
-          "content":"Mission de 3 ans a la société générale BDDF : crédit consommation web"
-        },
-        {
-          "id":"9",
-          "title":"Société Générale",
-          "content":"Mission de 3 ans a la société générale BDDF : crédit consommation web"
-        }
-      ],
-    }, 
-    {
-      "id":"2",
-      "title":"Compétences",
-      "lignes":[
-        {
-          "id":"1",
-          "title":"Société Générale",
-          "content":"Mission de 3 ans a la société générale BDDF : crédit consommation web"
-        },
-        {
-          "id":"2",
-          "title":"Société Générale",
-          "content":"Mission de 3 ans a la société générale BDDF : crédit consommation web"
-        },
-        {
-          "id":"3",
-          "title":"Société Générale",
-          "content":"Mission de 3 ans a la société générale BDDF : crédit consommation web"
-        }
-      ],
-    }, 
-    {
-      "id":"3",
-      "title":"Formation",
-      "lignes":[
-        {
-          "id":"4",
-          "title":"Société Générale",
-          "content":"Mission de 3 ans a la société générale BDDF : crédit consommation web"
-        },
-        {
-          "id":"5",
-          "title":"Société Générale",
-          "content":"Mission de 3 ans a la société générale BDDF : crédit consommation web"
-        },
-        {
-          "id":"6",
-          "title":"Société Générale",
-          "content":"Mission de 3 ans a la société générale BDDF : crédit consommation web"
-        }
-      ],
-    },
-
-  ];
+  // on récupère le contenu depuis un fichier json local pour le moment..
+  state = resume_file;
 
 
   render(){
     return (
       <div class="container">
 
-        {this.resume.map(categorie => (
+        {this.state.map(categorie => (
           <Categorie resume={categorie} />
           ))
         }
       
+        <div>
+          <form className="d-print-none">
+            <h4>Ajouter un élément</h4>
+            <input type="text" />
+            <button type="submit" onClick="handleAddCategorie(e)">Valider</button>
+          </form>
+        </div>
       </div>
 
-      
     );
   }
+
+  handleAddCategorie(e){
+    e.preventDefault();
+      console.log(e);
+  }
+
 }
 
 export default App;

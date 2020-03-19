@@ -1,4 +1,5 @@
 import React from "react";
+import Ligne from "./Ligne"
 
 class Categorie extends React.Component{
 
@@ -11,15 +12,11 @@ class Categorie extends React.Component{
 				<h2>{this.props.resume.title}</h2>
 				{this.props.resume.lignes.map(
 							ligne =>(
-		
-							      <article>
-							        <h4>{ligne.title}</h4>
-							        <p>{ligne.content}</p>
-							      </article>
+							      <Ligne ligne={ligne} />
 				      		)
 				      	)
-				 }
-			 <small class="d-block text-right mt-3">
+				 	}
+			 <small class="d-block text-right mt-3 d-print-none">
 		        <a href="#">Voir détails</a>
 		      </small>
 			</article>);
