@@ -1,4 +1,4 @@
 
 ## Resume Generator
 
-Cette application permet de générer un CV en ligne
+Cette application React permet de générer un CV en ligne
