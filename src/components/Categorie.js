@@ -25,7 +25,9 @@ class Categorie extends Component {
 		        <a href="#">Voir détails</a>
 		      </small>
 
-		      <ResumeForm onAddElement={this.handleAddLigne} inputTitle="Ajouter une ligne" />
+
+		      <ResumeForm onAddElement={this.handleAddLigne} inputTitle="Ajouter une ligne" afficherForm={this.props.afficherForm} />
+		  	
 
 			</article>);
 	}

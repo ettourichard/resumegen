@@ -14,15 +14,23 @@ class ResumeForm extends Component{
 	}
 
 	render(){
-		return(
-		<div>
-          <form className="d-print-none">
-            <h4>{this.props.inputTitle}</h4>
-            <input ref={this.inputForm} type="text" />
-            <button type="submit" onClick={this.handleAddElement}>Valider</button>
-          </form>
-        </div>
-        );
+
+		if(this.props.afficherForm){
+			return(
+			<div>
+	          <form className="d-print-none">
+	            <h4>{this.props.inputTitle}</h4>
+	            <input ref={this.inputForm} type="text" />
+	            <button type="submit" onClick={this.handleAddElement}>Valider</button>
+	          </form>
+	        </div>
+	        );
+		}
+		else{
+			return "";
+		}
+
+		
 	}
 
 }

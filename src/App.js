@@ -9,7 +9,8 @@ class App extends Component {
 
   // on récupère le contenu depuis un fichier json local pour le moment..
   state = {
-      resume : [...resume_file]
+      resume : [...resume_file], 
+      afficherForm : true,
   }
   
 
@@ -30,8 +31,6 @@ class App extends Component {
 
   handleAddLigne = (idCategory, ligne) => {
 
- 
-
     let resume_temp = [...this.state.resume];
 
     let indexOfCategory = this.getIndexOfId(idCategory, resume_temp);
@@ -47,7 +46,11 @@ class App extends Component {
 
     this.setState(resume_temp);
 
+  }
 
+  afficherMasquerForm = () => {
+    let afficherForm = this.state.afficherForm ? false : true;
+    this.setState({afficherForm});
   }
 
   getMaxId(id, tab){
@@ -74,11 +77,13 @@ class App extends Component {
       <div className="container">
 
         {this.state.resume.map(categorie => (
-          <Categorie resume={categorie} key={categorie.id} onAddElement={this.handleAddLigne} />
+          <Categorie resume={categorie} key={categorie.id} onAddElement={this.handleAddLigne} afficherForm={this.state.afficherForm}/>
           ))
         }
 
-        <ResumeForm onAddElement={this.handleAddCategorie} inputTitle="Ajouter une catégorie"/>
+        <ResumeForm onAddElement={this.handleAddCategorie} inputTitle="Ajouter une catégorie" afficherForm={this.state.afficherForm}/>
+
+        <button type="button" onClick={this.afficherMasquerForm}>Form</button>
       
       </div>
 
