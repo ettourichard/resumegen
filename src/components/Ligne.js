@@ -1,19 +1,13 @@
 import React from "react";
 
-class Ligne extends React.Component{
+function Ligne({ligne}) {
 
-	
-
-	render(){
-	
 		return(
 			<article>
-				<h5>{this.props.ligne.title}</h5>
-				<p>{this.props.ligne.content}</p>
-			</article>);
-	};
-
-
+				<h5>{ligne.title}</h5>
+				<p>{ligne.content}</p>
+			</article>
+		);
 
 }
 

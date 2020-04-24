@@ -1,38 +1,88 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Categorie from "./components/Categorie"
+import ResumeForm from "./components/ResumeForm"
 import './App.css';
 import resume_file from "./data/exemple.json"
 
-class App extends React.Component {
+
+class App extends Component {
 
   // on récupère le contenu depuis un fichier json local pour le moment..
-  state = resume_file;
+  state = {
+      resume : [...resume_file]
+  }
+  
+
+  handleAddCategorie = (categorie) => {
+
+      let resume_temp = [...this.state.resume];
+
+      let newValue={
+        "id": this.state.resume.length+1, 
+        "title" : categorie,
+        "lignes" : []
+      };
+
+      resume_temp.push(newValue);
+
+      this.setState({resume: resume_temp});
+  }
+
+  handleAddLigne = (idCategory, ligne) => {
+
+ 
+
+    let resume_temp = [...this.state.resume];
+
+    let indexOfCategory = this.getIndexOfId(idCategory, resume_temp);
+    let idNewLigne = this.getMaxId(idCategory, resume_temp[indexOfCategory].lignes) +1;
+
+    let newValue={
+      "id" : idNewLigne,
+      "title" : ligne,
+      "content" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id massa nec lacus pretium sollicitudin. Suspendisse id nunc elit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+    }
+
+    resume_temp[indexOfCategory].lignes.push(newValue);
+
+    this.setState(resume_temp);
+
+
+  }
+
+  getMaxId(id, tab){
+      let value = -1;
+      tab.map((ligne)=>{
+          value = ligne.id > value ? ligne.id : value;
+      })
+      return value;
+  }
+
+  getIndexOfId(id, tab){
+      let value = -1;
+      let cpt = 0;
+      tab.map((ligne)=>{
+          value = ligne.id == id ? cpt : value;
+          cpt++;
+      })
+      return value;
+  }
 
 
   render(){
     return (
       <div className="container">
 
-        {this.state.map(categorie => (
-          <Categorie resume={categorie} key={categorie.id}/>
+        {this.state.resume.map(categorie => (
+          <Categorie resume={categorie} key={categorie.id} onAddElement={this.handleAddLigne} />
           ))
         }
+
+        <ResumeForm onAddElement={this.handleAddCategorie} inputTitle="Ajouter une catégorie"/>
       
-        <div>
-          <form className="d-print-none">
-            <h4>Ajouter un élément</h4>
-            <input type="text" />
-            <button type="submit" onClick={this.handleAddCategorie}>Valider</button>
-          </form>
-        </div>
       </div>
 
     );
-  }
-
-  handleAddCategorie(e){
-    e.preventDefault();
-      console.log(e);
   }
 
 }
