@@ -1,0 +1,65 @@
+{
+  "title":"Développeur FullStack",
+  "name":"ETTOU",
+  "surname":"Richard",
+  "resume":[
+    {
+      "title":"Experience Professionnelle",
+      "lignes":[
+        {
+          "title":"Société Générale",
+          "content":"Mission de 3 ans a la société générale BDDF : crédit consommation web"
+        },
+        {
+          "title":"Crédit Agricole Corporate and Investment Bank",
+          "content":"Mission de 3 ans chez CACIB, dans le département Sous-Traitance : Gestion et Support d'applications de trésorerie pour LCL"
+        },
+        {
+          "title":"Crédit Agricole Consumer Finance",
+          "content":"Alternance de 3 ans dans le département Canaux B2B & B2C : Mise en place de la souscription sur le module destiné aux partenaires automobiles, Signature electronique sur le parcours Sofinco"
+        }
+      ]
+    }, 
+    {
+      "title":"Compétences",
+      "lignes":[
+        {
+          "title":"Développement Back : Java",
+          "content":"Nombreux projets sous Java 6 et 8"
+        },
+        {
+          "title":"Développement Front : Javascript",
+          "content":"Node JS, Vanilla JS, Backbone.JS, React.JS, jQuery, Bootstrap, ..."
+        },
+        {
+          "title":"Métier : Banque/Finance",
+          "content":"Plusieurs projets sur le crédit à la consommation"
+        }
+      ]
+    }, 
+    {
+      "title":"Formation",
+      "lignes":[
+        {
+          "title":"ESGI : Master of Science",
+          "content":"Obtention d'un Master of Science en alternance - Spécialité Ingénierie du Web et E-Business"
+        },
+        {
+          "title":"ESGI",
+          "content":"Obtention d'un Bachelor en alternance - Spécialité Développement Web et E-Business"
+        },
+        {
+          "title":"IUT d'Orsay - Université Paris Sud XI",
+          "content":"Obtention du DUT Informatique"
+        }
+      ]
+    },
+    {
+      "title":"Centres d'intêret",
+      "lignes":[
+      ]
+    }
+  ]
+}
+
+

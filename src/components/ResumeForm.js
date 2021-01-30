@@ -7,8 +7,7 @@ class ResumeForm extends Component{
 
 	handleAddElement = event => {
 		event.preventDefault();
-		console.log(this.props)
-
+		console.log("handleAddElement", this.inputForm.current.value);
 		this.props.onAddElement(this.inputForm.current.value);
 
 	}
